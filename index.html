@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubrica petalosa</title>
+    <link rel="shortcut icon" href="./Media/Rubrica-logo.png" type="image/x-icon">
+
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- navbar + ricerca -->
+    <nav class="position-absolute vw-100 bg-secondary p-2 d-flex justify-items-between nav-heigth z-3">
+        <div class="col-1 my-auto">
+            <!-- bottone mostra contatti -->
+            <button type="button" class="btn bg-primary mx-2" id="showBtn">Show</button>
+        </div>
+        <div class="col-8 my-auto text-center">
+            <!-- barra di ricerca -->
+            <form class="d-flex ms-5" role="search">
+                <input class="form-control me-2" type="search" placeholder="Cerca un tuo contatto" aria-label="Search">
+                <button class="btn bg-primary mx-2" type="submit">Search</button>
+            </form>
+
+        </div>
+
+        <!--bottoni contatti -->
+
+        <div class="col-3 my-auto d-flex justify-content-end">
+            <button class="btn bg-primary mx-2" id="addBtn">Add</button>
+            <button class="btn bg-primary mx-2" id="delBtn">Delete</button>
+        </div>
+
+
+    </nav>
+
+
+    <div class="nav-heigth"></div>
+
+
+    <!-- Sezione input nome e numero-->
+
+    <section class="container display-center">
+
+        <h1 class="mt-5 d-flex justify-content-center mb-5">RUBRICA PETALOSA</h1>
+
+        <form class="bg-secondary container-fluid d-flex justify-content-center rounded-4">
+            <div class="col-12 col-md-6 my-4">
+                <div class="mb-3">
+
+                    <!--input nome-->
+                    <label for="name" class="form-label">Inserici nome</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="textArea">
+                    <div id="textArea" class="form-text">Il nome deve contenere SOLO caratteri alfanumerici</div>
+                </div>
+                <div class="form-outline mb-3">
+
+                    <!--input numero-->
+                    <input type="tel" id="typePhone" class="form-control">
+                    <label for="typePhone" class="form-label">Inserisci numero</label>
+                </div>
+                <button type="submit" class="btn bg-primary mx-2 my-4">Crea Contatto</button>
+        </form>
+
+
+    </section>
+
+
+    <!-- contenitore contatti -->
+
+    <section class="container mt-5">
+        <div class="row justify-content-center my-5 bg-secondary rounded-4">
+            <div class="col-12 col-md-6">
+                <div class="card-custom">
+                    <p class="lead m-0">Nome</p>
+                    <p class="lead m-0">Numero</p>
+                    <i class="fa-solid fa-trash fa-2x icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
