@@ -9,8 +9,9 @@
 
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -23,57 +24,67 @@
 
 <body>
 
-    <!-- navbar + ricerca -->
-    <nav class="position-absolute vw-100 bg-secondary p-2 d-flex justify-items-between nav-heigth z-3">
+    <!-- Navbar + Cerca -->
+    <nav class="navbar navbar-expand-lg bg-dark position-absolute vw-100 p-2 d-flex justify-items-between">
         <div class="col-1 my-auto">
             <!-- bottone mostra contatti -->
-            <button type="button" class="btn bg-primary mx-2" id="showBtn">Show</button>
+            <button type="button" class="btn btn-outline-light mx-2" id="showContactsBtn">Show</button>
         </div>
         <div class="col-8 my-auto text-center">
             <!-- barra di ricerca -->
             <form class="d-flex ms-5" role="search">
-                <input class="form-control me-2" type="search" placeholder="Cerca un tuo contatto" aria-label="Search">
-                <button class="btn bg-primary mx-2" type="submit">Search</button>
+                <input class="form-control" type="search" placeholder="Cerca un tuo Contatto" id="searchContactBtn" aria-label="Search">
+                <button class="btn btn-outline-light mx-2">Search</button>
             </form>
 
         </div>
 
         <!--bottoni contatti -->
 
-        <div class="col-3 my-auto d-flex justify-content-end">
-            <button class="btn bg-primary mx-2" id="addBtn">Add</button>
-            <button class="btn bg-primary mx-2" id="delBtn">Delete</button>
-        </div>
-
-
+       
     </nav>
-
+    <!-- Fine Navbar + Cerca-->
 
     <div class="nav-heigth"></div>
 
 
+
+
+ <!-- CONTENITORE TITOLO -->
+ <div class="container-fluid">
+    <div class="row mt-2">
+        <div class="col-12">
+            <h1 class="d-flex justify-content-center mb-5 mt-5 ">RUBRICA PETALOSA</h1>
+        </div>
+    </div>
+</div>
+
+
+
     <!-- Sezione input nome e numero-->
+    <section class="container d-flex justify-content-center w-50">
+        <form class="container-fluid d-flex justify-content-center bg-dark text-light rounded-4">
+            <div class="col-6 col-md-6 my-4">
 
-    <section class="container display-center">
+                <!--input nome-->
+                <i class="fa-regular fa-address-book fa-2x"></i>
 
-        <h1 class="mt-5 d-flex justify-content-center mb-5">RUBRICA PETALOSA</h1>
-
-        <form class="bg-secondary container-fluid d-flex justify-content-center rounded-4">
-            <div class="col-12 col-md-6 my-4">
-                <div class="mb-3">
-
-                    <!--input nome-->
-                    <label for="name" class="form-label">Inserici nome</label>
-                    <input type="text" class="form-control" id="name" aria-describedby="textArea">
-                    <div id="textArea" class="form-text">Il nome deve contenere SOLO caratteri alfanumerici</div>
+                <div class="form-floating mb-3 mt-5">
+                    <input type="name" class="form-control" id="nameInput" placeholder="">
+                    <label for="nameInput">Inserici Nome</label>
                 </div>
-                <div class="form-outline mb-3">
 
-                    <!--input numero-->
-                    <input type="tel" id="typePhone" class="form-control">
-                    <label for="typePhone" class="form-label">Inserisci numero</label>
+                <!--input numero-->
+                
+                <i class="fa-solid fa-square-phone fa-2x"></i>
+                <div class="form-floating mt-4">
+                    <input type="number" class="form-control" id="numberInput" placeholder="">
+                    <label for="numberInput">Inserici Numero</label>
                 </div>
-                <button type="submit" class="btn bg-primary mx-2 my-4">Crea Contatto</button>
+                <div class="col-3 my-auto d-flex justify-content">
+                    <button class="btn btn-outline-light mx-5 mt-4" id="addContactBtn">Add</button>
+                    <button class="btn btn-outline-light mx-5 mt-4" id="removeContactBtn">Delete</button>
+                </div>            
         </form>
 
 
@@ -83,25 +94,19 @@
     <!-- contenitore contatti -->
 
     <section class="container mt-5">
-        <div class="row justify-content-center my-5 bg-secondary rounded-4">
-            <div class="col-12 col-md-6">
-                <div class="card-custom">
-                    <p class="lead m-0">Nome</p>
-                    <p class="lead m-0">Numero</p>
-                    <i class="fa-solid fa-trash fa-2x icon"></i>
-                </div>
-            </div>
+        <div class="row justify-content-center my-5 bg-secondary rounded-4" id="cardsWrapper">
+
         </div>
     </section>
 
 
 
-
-    <!-- JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    <!-- Bootstrap CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
+    <!-- Script CUS JS -->
     <script src="./main.js"></script>
 </body>
 
